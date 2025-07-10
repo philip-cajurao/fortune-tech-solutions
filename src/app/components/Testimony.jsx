@@ -15,8 +15,8 @@ const Testimony = ({message, image, name, position}) => {
 
             <div className="flex items-center">
                 <div className="avatar">
-                    <div className="w-12 rounded-full">
-                        <Image src={image} loading="lazy" placeholder="blur" alt="Testimonee Image" />
+                    <div className="rounded-full">
+                        <Image src={image} loading="lazy" width={40} placeholder="blur" alt="Testimonee Image" />
                     </div>
                 </div>
                 <div className="ml-2">

@@ -43,7 +43,7 @@ const EmailForm = () => {
         if (!formData.from_email.value) {
             setFormData(prev => ({
                 ...prev,
-                from_email: { ...prev.from_email, isValid: false, errorMessage: "This field shouldn't be empty." }
+                from_email: { ...prev.from_email, isValid: false, errorMessage: "Required." }
             }))
             formValid = false;
         } else if (!emailRegex.test(formData.from_email.value)) {
@@ -57,7 +57,7 @@ const EmailForm = () => {
         if (!formData.from_firstName.value) {
             setFormData(prev => ({
                 ...prev,
-                from_firstName: { ...prev.from_firstName, isValid: false, errorMessage: "This field shouldn't be empty." }
+                from_firstName: { ...prev.from_firstName, isValid: false, errorMessage: "Required." }
             }))
             formValid = false;
         }
@@ -65,7 +65,7 @@ const EmailForm = () => {
         if (!formData.from_lastName.value) {
             setFormData(prev => ({
                 ...prev,
-                from_lastName: { ...prev.from_lastName, isValid: false, errorMessage: "This field shouldn't be empty." }
+                from_lastName: { ...prev.from_lastName, isValid: false, errorMessage: "Required." }
             }))
             formValid = false;
         }
@@ -73,7 +73,7 @@ const EmailForm = () => {
         if (!formData.from_phone.value) {
             setFormData(prev => ({
                 ...prev,
-                from_phone: { ...prev.from_phone, isValid: false, errorMessage: "This field shouldn't be empty." }
+                from_phone: { ...prev.from_phone, isValid: false, errorMessage: "Required." }
             }))
             formValid = false;
         }
@@ -81,7 +81,7 @@ const EmailForm = () => {
         if (!formData.message.value) {
             setFormData(prev => ({
                 ...prev,
-                message: { ...prev.message, isValid: false, errorMessage: "This field shouldn't be empty." }
+                message: { ...prev.message, isValid: false, errorMessage: "Required." }
             }))
             formValid = false;
         } else if (formData.message.value.length < 2) {

@@ -1,5 +1,3 @@
-"use client"
-
 import ie from "../assets/projects images/ie.png"
 import cos from "../assets/projects images/cos.png"
 import fht from "../assets/projects images/fht.png"
@@ -12,7 +10,7 @@ import Image from "next/image"
 
 const Projects = () => {
     return (
-        <div className="overflow-hidden py-16">
+        <div className="overflow-hidden pb-16">
             <h2 className="text-4xl font-bold text-center">Projects we&apos;ve done</h2>
             <p className="text-xl text-center mb-4">Tailored just for you</p>
 
@@ -27,6 +25,24 @@ const Projects = () => {
                     <div>
                         <figure className="rounded-md overflow-hidden relative group shadow-xl border border-base-content">
                             <div className="absolute backdrop-blur-lg bg-primary/50 opacity-0 group-hover:opacity-100 transition duration-500 h-full w-full flex flex-col justify-center items-center">
+                                <a className="join rounded-full overflow-hidden" href="https://www.feoaf.org/" target="__blank">
+                                    <div className="py-3 px-4 border-r bg-black/50 border-white text-white join-item">FEOAF</div>
+                                    <span className="py-3 px-4 bg-black/50 border-white text-white join-item">&#8599;</span>
+                                </a>
+                            </div>
+                            <Image
+                                loading="lazy"
+                                placeholder="blur"
+                                width={500}
+                                sizes="height: auto"
+                                src={feoaf}
+                                alt="FEOAF Website" />
+
+                        </figure>
+                    </div>
+                    <div>
+                        <figure className="rounded-md overflow-hidden relative group shadow-xl border border-base-content">
+                            <div className="absolute backdrop-blur-lg bg-primary/50 opacity-0 group-hover:opacity-100 transition duration-500 h-full w-full flex flex-col justify-center items-center">
                                 <a className="join rounded-full overflow-hidden" href="https://www.insuranceenterpriseusa.com/" target="__blank">
                                     <div className="py-3 px-4 border-r bg-black/50 border-white text-white join-item">Insurance Enterprise USA</div>
                                     <span className="py-3 px-4 bg-black/50 border-white text-white join-item">&#8599;</span>
@@ -35,9 +51,31 @@ const Projects = () => {
                             <Image
                                 loading="lazy"
                                 placeholder="blur"
-                                className="w-full max-w-xl"
+                                width={500}
+                                sizes="height: auto"
                                 src={ie}
                                 alt="Insurance Enterprise USA Website" />
+
+                        </figure>
+                    </div>
+
+                </div>
+                <div className="flex flex-col lg:flex-row items-center justify-center xl:flex-row-reverse gap-8">
+                    <div>
+                        <figure className="rounded-md overflow-hidden relative group shadow-xl border border-base-content">
+                            <div className="absolute backdrop-blur-lg bg-primary/50 opacity-0 group-hover:opacity-100 transition duration-500 h-full w-full flex flex-col justify-center items-center">
+                                <a className="join rounded-full overflow-hidden" href="https://www.restreetsmart.com/" target="__blank">
+                                    <div className="py-3 px-4 border-r bg-black/50 border-white text-white join-item">RE Street Smart</div>
+                                    <span className="py-3 px-4 bg-black/50 border-white text-white join-item">&#8599;</span>
+                                </a>
+                            </div>
+                            <Image
+                                loading="lazy"
+                                placeholder="blur"
+                                width={500}
+                                sizes="height: auto"
+                                src={restreetsmart}
+                                alt="RE Street Smart Website" />
 
                         </figure>
                     </div>
@@ -52,45 +90,10 @@ const Projects = () => {
                             <Image
                                 loading="lazy"
                                 placeholder="blur"
-                                className="w-full max-w-xl"
+                                width={500}
+                                sizes="height: auto"
                                 src={cos}
                                 alt="Cash Offer Solid Website" />
-
-                        </figure>
-                    </div>
-                </div>
-                <div className="flex flex-col lg:flex-row items-center justify-center xl:flex-row-reverse gap-8">
-                    <div>
-                        <figure className="rounded-md overflow-hidden relative group shadow-xl border border-base-content">
-                            <div className="absolute backdrop-blur-lg bg-primary/50 opacity-0 group-hover:opacity-100 transition duration-500 h-full w-full flex flex-col justify-center items-center">
-                                <a className="join rounded-full overflow-hidden" href="https://www.restreetsmart.com/" target="__blank">
-                                    <div className="py-3 px-4 border-r bg-black/50 border-white text-white join-item">RE Street Smart</div>
-                                    <span className="py-3 px-4 bg-black/50 border-white text-white join-item">&#8599;</span>
-                                </a>
-                            </div>
-                            <Image
-                                loading="lazy"
-                                placeholder="blur"
-                                className="w-full max-w-xl"
-                                src={restreetsmart}
-                                alt="RE Street Smart Website" />
-
-                        </figure>
-                    </div>
-                    <div>
-                        <figure className="rounded-md overflow-hidden relative group shadow-xl border border-base-content">
-                            <div className="absolute backdrop-blur-lg bg-primary/50 opacity-0 group-hover:opacity-100 transition duration-500 h-full w-full flex flex-col justify-center items-center">
-                                <a className="join rounded-full overflow-hidden" href="https://www.feoaf.org/" target="__blank">
-                                    <div className="py-3 px-4 border-r bg-black/50 border-white text-white join-item">FEOAF</div>
-                                    <span className="py-3 px-4 bg-black/50 border-white text-white join-item">&#8599;</span>
-                                </a>
-                            </div>
-                            <Image
-                                loading="lazy"
-                                placeholder="blur"
-                                className="w-full max-w-xl"
-                                src={feoaf}
-                                alt="FEOAF Website" />
 
                         </figure>
                     </div>
@@ -105,7 +108,8 @@ const Projects = () => {
                             <Image
                                 loading="lazy"
                                 placeholder="blur"
-                                className="w-full max-w-xl"
+                                width={500}
+                                sizes="height: auto"
                                 src={pc}
                                 alt="Premier Cabinetry Website" />
 
@@ -124,7 +128,8 @@ const Projects = () => {
                             <Image
                                 loading="lazy"
                                 placeholder="blur"
-                                className="w-full max-w-xl"
+                                width={500}
+                                sizes="height: auto"
                                 src={fht}
                                 alt="Fortune Homes Team Website" />
 
@@ -141,7 +146,8 @@ const Projects = () => {
                             <Image
                                 loading="lazy"
                                 placeholder="blur"
-                                className="w-full max-w-xl"
+                                width={500}
+                                sizes="height: auto"
                                 src={fts}
                                 alt="Fortune Tech Solutions Website" />
 

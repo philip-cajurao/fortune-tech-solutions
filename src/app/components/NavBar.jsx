@@ -1,11 +1,9 @@
 "use client"
 
-import { Link } from "react-scroll";
+import { Link, scroller } from "react-scroll";
 import ThemeSelector from "./ThemeSelector";
 import { useContext, useState, useEffect } from "react";
 import Headroom from "react-headroom";
-import fhttransparentblack from "../../../public/fts-light.png"
-import fhttransparentwhite from "../../../public/fts-dark.png"
 import { ThemeContext } from "../context/ThemeContext";
 import Image from "next/image";
 
@@ -26,6 +24,10 @@ const NavBar = () => {
         setIsMenuOpen(prev => !prev)
     }
 
+    const handleScrollToSection = () => scroller.scrollTo('section0', {
+        smooth: true,
+        offset: -100
+    });
 
     useEffect(() => {
         isMenuOpen ?
@@ -43,12 +45,12 @@ const NavBar = () => {
                 ${isMenuOpen ? "opacity-100 -translate-y-0" : " -translate-y-full duration-500 opacity-0 border-b-transparent"}
                 `}>
                 <ul className={`menu text-base-content bg-base-200 min-h-full w-full p-4 relative translate-y-16 overflow-x-hidden items-center`}>
-                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[150ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><Link onClick={handleChangeMenu} to='section0' smooth={true} className='rounded text-2xl py-5' offset={-100} >Home</Link></li>
-                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[250ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><Link onClick={handleChangeMenu} to='section1' smooth={true} className='rounded text-2xl py-5'>About Us</Link></li>
-                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[350ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><Link onClick={handleChangeMenu} to='section2' smooth={true} className='rounded text-2xl py-5' offset={-20} >Services</Link></li>
-                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[450ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><Link onClick={handleChangeMenu} to='section3' smooth={true} className='rounded text-2xl py-5'>Projects</Link></li>
-                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[550ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><Link onClick={handleChangeMenu} to='section4' smooth={true} className='rounded text-2xl py-5'>Pricing</Link></li>
-                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[650ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><Link onClick={handleChangeMenu} to='section5' smooth={true} className='rounded text-2xl py-5' offset={-10} >Contacts</Link></li>
+                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[150ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><a onClick={handleChangeMenu} href='#home' className='rounded text-2xl py-5' >Home</a></li>
+                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[250ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><a onClick={handleChangeMenu} href='#about' className='rounded text-2xl py-5'>About Us</a></li>
+                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[350ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><a onClick={handleChangeMenu} href='#services' className='rounded text-2xl py-5' >Services</a></li>
+                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[450ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><a onClick={handleChangeMenu} href='#projects' className='rounded text-2xl py-5'>Projects</a></li>
+                    {/* <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[550ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><a onClick={handleChangeMenu} href='#section4' smooth={true} className='rounded text-2xl py-5'>Pricing</a></li> */}
+                    <li className={`transition-all ${isMenuOpen ? "duration-500 delay-[650ms] opacity-100 translate-x-0" : "opacity-0 duration-0 translate-x-full"}`}><a onClick={handleChangeMenu} href='#contact' className='rounded text-2xl py-5' >Contacts</a></li>
                 </ul>
             </div>
 
@@ -58,31 +60,30 @@ const NavBar = () => {
                         `}>
 
                 <div className={`
-                        absolute left-0 bottom-0 z-50 flex justify-center w-full overflow-hidden duration-1000 transition-transform
-                        ${darkTheme ? (isPin ? "scale-y-10" : "scale-y-0") : "hidden"} 
+                        absolute bottom-0 left-0 right-0 bg-base-content/25 w-full h-[5px] sm:h-[1px] duration-1000 transition-transform
+                        ${darkTheme && (isPin ? "scale-y-100" : "scale-y-0")} 
                             `}>
-                    <div className="bg-white h-[5px] sm:h-[1px] w-full" />
                 </div>
 
                 <div className="navbar-start hidden md:flex">
-                    <Link to='section0' smooth={true} offset={-100} className="btn btn-link text-2xl no-underline hover:no-underline text-inherit" >
+                    <a href="#home" smooth="true" target="_top" className="btn btn-link text-2xl no-underline hover:no-underline text-inherit" >
                         {/* fts. */}
                         {
                             darkTheme ?
-                                <Image alt="FHT logo" priority src={fhttransparentwhite} className="h-12 w-12" />
+                                <Image alt="FHT logo" priority src="/fts-dark.png" width={48} height={48} />
                                 :
-                                <Image alt="FHT logo" priority src={fhttransparentblack} className="h-12 w-12" />
+                                <Image alt="FHT logo" priority src="/fts-light.png" width={48} height={48} />
                         }
-                    </Link>
+                    </a>
                 </div>
 
 
                 <div className='navbar-center hidden md:flex h-full'>
-                    <Link to='section1' smooth={true} className='p-4 hover:cursor-pointer'>About Us</Link>
-                    <Link to='section2' smooth={true} offset={-40} className='p-4 hover:cursor-pointer'>Services</Link>
-                    <Link to='section3' smooth={true} className='p-4 hover:cursor-pointer'>Projects</Link>
+                    <a href="#about" className='p-4 hover:cursor-pointer'>About Us</a>
+                    <a href="#services" className='p-4 hover:cursor-pointer'>Services</a>
+                    <a href="#projects" className='p-4 hover:cursor-pointer'>Projects</a>
                     {/* <Link to='section4' smooth={true} className='btn btn-ghost btn-primary rounded-sm'>Pricing</Link> */}
-                    <Link to='section5' smooth={true} className='p-4 hover:cursor-pointer'>Contact Us</Link>
+                    <a href="#contact" className='p-4 hover:cursor-pointer'>Contact Us</a>
                 </div>
 
 
@@ -115,15 +116,15 @@ const NavBar = () => {
 
 
                 <div className="navbar-center md:hidden">
-                    <Link to='section0' smooth={true} offset={-100} className="btn btn-link text-2xl no-underline hover:no-underline text-inherit" >
+                    <a href='#home' className="btn btn-link text-2xl no-underline hover:no-underline text-inherit" >
                         {/* fts. */}
                         {
                             darkTheme ?
-                                <Image alt="FHT logo" priority src={fhttransparentwhite} className="h-12 w-12" />
+                                <Image alt="FHT logo" priority src="/fts-dark.png" width={48} height={48} />
                                 :
-                                <Image alt="FHT logo" priority src={fhttransparentblack} className="h-12 w-12" />
+                                <Image alt="FHT logo" priority src="/fts-light.png" width={48} height={48} />
                         }
-                    </Link>
+                    </a>
                 </div>
 
 

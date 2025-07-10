@@ -10,10 +10,10 @@ export default function Home() {
     <>
 
       <Hero />
-      <Section container content={<AboutUs />} id={1} />
-      <Section container content={<Services />} id={2} />
-      <Section content={<Projects />} id={3} />
-      <Section content={<Contacts />} id={5} />
+      <Section container content={<AboutUs />} id={"about"} />
+      <Section container content={<Services />} id={"services"} />
+      <Section content={<Projects />} id={"projects"} />
+      <Section content={<Contacts />} id={"contact"} />
     </>
 
   );

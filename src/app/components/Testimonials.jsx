@@ -1,3 +1,5 @@
+"use client"
+
 import testimonies from "../data/testimonies";
 import Testimony from "./Testimony";
 import { useState } from "react";
