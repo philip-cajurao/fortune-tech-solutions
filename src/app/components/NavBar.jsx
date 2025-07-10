@@ -60,7 +60,7 @@ const NavBar = () => {
                         `}>
 
                 <div className={`
-                        absolute bottom-0 left-0 right-0 bg-base-content/25 w-full h-[5px] sm:h-[1px] duration-1000 transition-transform
+                        absolute bottom-0 left-0 right-0 bg-base-content/25 w-full dark:h-[5px] dark:sm:h-[1px] duration-1000 transition-transform
                         ${darkTheme && (isPin ? "scale-y-100" : "scale-y-0")} 
                             `}>
                 </div>
