@@ -1,6 +1,5 @@
 "use client"
 
-import { Link, scroller } from "react-scroll";
 import ThemeSelector from "./ThemeSelector";
 import { useContext, useState, useEffect } from "react";
 import Headroom from "react-headroom";
