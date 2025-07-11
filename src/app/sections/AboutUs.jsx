@@ -1,8 +1,13 @@
+"use client"
+
+import { useContext } from "react";
+import { SectionContext } from "../context/SectionContext";
 
 const AboutUs = () => {
+    const { aboutRef } = useContext(SectionContext)
     return (
-        <div className="flex flex-col items-center justify-center space-y-32 cursor-deafult">
-            <div className="divider"></div>
+        <div ref={aboutRef} className="py-32 flex flex-col items-center justify-center space-y-32 cursor-deafult">
+            <div className="divider mb-16"></div>
             <div className="flex flex-col max-w-4xl mx-auto items-center">
                 <h2 className="text-4xl font-bold mb-8">About Us</h2>
                 <div className="text-base-content/70 text-lg px-2">

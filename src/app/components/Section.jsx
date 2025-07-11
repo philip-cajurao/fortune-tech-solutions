@@ -1,10 +1,12 @@
 
-const Section = ({ ref = null, content, id, container = false }) => {
+
+
+const Section = ({ ref, content, id, container = false }) => {
     return (
         <section
             ref={ref}
             id={id}
-            className={`mx-auto py-16 ${container ? "container" : ""}`}
+            className={`mx-auto ${container ? "container" : ""}`}
         >
             {content}
         </section>

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import { useEffect } from 'react';
 
-export default function Theme({ children }) {
+export default function ThemeProvider({ children }) {
     const [theme, setTheme] = useState('light');
     const [darkTheme, setDarkTheme] = useState(false);
 

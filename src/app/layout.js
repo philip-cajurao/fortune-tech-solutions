@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import ThemeProvider from "./components/ThemeProvider";
 import { Inter } from 'next/font/google'
 import "./globals.css";
+import SectionProvider from "./components/SectionProvider";
 
 export const metadata = {
   title: {
@@ -43,7 +44,7 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-   robots: {
+  robots: {
     index: true,
     follow: true,
     nocache: false,
@@ -58,7 +59,7 @@ export const metadata = {
   },
   icons: {
     icon: [
-      {url: "fts-light.png"},
+      { url: "fts-light.png" },
       { url: 'fts-dark.png', media: '(prefers-color-scheme: dark)' }
     ]
   }
@@ -73,9 +74,11 @@ export default function RootLayout({ children }) {
         className={`antialiased ${inter.className}`}
       >
         <ThemeProvider>
-          <NavBar />
-          {children}
-          <Footer />
+          <SectionProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </SectionProvider>
         </ThemeProvider>
       </body>
     </html>
