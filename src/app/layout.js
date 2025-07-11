@@ -7,12 +7,12 @@ import "./globals.css";
 export const metadata = {
   title: "Fortune Tech Solutions",
   description: "We help businesses to success by using modern tools for a faster and efficient way to work, brought to you by the experts in the industry.",
-  metadataBase: new URL("https://fortunetechsolutions.net"),
+  metadataBase: new URL("https://fortune-tech-solutions.vercel.app/"),
   openGraph: {
     title: "Fortune Tech Solutions",
     description:
       "We help businesses to success by using modern tools for a faster and efficient way to work, brought to you by the experts in the industry.",
-    url: "https://fortunetechsolutions.net",
+    url: "https://fortune-tech-solutions.vercel.app/",
     siteName: "Fortune Tech Solutions",
     images: [
       {
