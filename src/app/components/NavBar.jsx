@@ -23,11 +23,6 @@ const NavBar = () => {
         setIsMenuOpen(prev => !prev)
     }
 
-    const handleScrollToSection = () => scroller.scrollTo('section0', {
-        smooth: true,
-        offset: -100
-    });
-
     useEffect(() => {
         isMenuOpen ?
             document.body.style.overflow = "hidden" :
