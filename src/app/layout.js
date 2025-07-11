@@ -6,7 +6,25 @@ import "./globals.css";
 
 export const metadata = {
   title: "Fortune Tech Solutions",
-  description: "",
+  description: "We help businesses to success by using modern tools for a faster and efficient way to work, brought to you by the experts in the industry.",
+  metadataBase: new URL("https://fortunetechsolutions.net"),
+  openGraph: {
+    title: "Fortune Tech Solutions",
+    description:
+      "We help businesses to success by using modern tools for a faster and efficient way to work, brought to you by the experts in the industry.",
+    url: "https://fortunetechsolutions.net",
+    siteName: "Fortune Tech Solutions",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Fortune Tech Solutions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const inter = Inter({ subsets: ['latin'] })

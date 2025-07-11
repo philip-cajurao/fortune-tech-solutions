@@ -14,6 +14,7 @@ export default function Home() {
       <Section container content={<Services />} id={"services"} />
       <Section content={<Projects />} id={"projects"} />
       <Section content={<Contacts />} id={"contact"} />
+      
     </>
 
   );
