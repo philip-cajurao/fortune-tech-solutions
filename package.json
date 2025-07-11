@@ -16,7 +16,6 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-headroom": "^3.2.1",
-    "react-scroll": "^1.9.3",
     "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
