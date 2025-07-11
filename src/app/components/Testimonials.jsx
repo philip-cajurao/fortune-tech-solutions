@@ -19,7 +19,7 @@ const Testimonials = () => {
         ))
     }
     return (
-        <div className="py-16 mx-auto max-w-7xl flex flex-col md:flex-row sm:pl-16 justify-evenly px-4">
+        <div className="pt-16 mx-auto max-w-7xl flex flex-col md:flex-row sm:pl-16 justify-evenly px-4">
             <div className="space-y-4 py-8 max-w-sm flex flex-col">
                 <div className="space-y-2">
                     <h2 className="text-4xl font-bold">What people say about us.</h2>

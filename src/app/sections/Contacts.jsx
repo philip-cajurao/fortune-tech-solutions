@@ -1,8 +1,13 @@
+"use client"
+
+import { useContext } from "react";
 import EmailForm from "../components/EmailForm";
+import { SectionContext } from "../context/SectionContext";
 
 const Contacts = () => {
+    const {contactRef} = useContext(SectionContext);
     return (
-        <div className="flex justify-center items-center max-w-7xl mx-auto">
+        <div ref={contactRef} className="py-32 flex justify-center items-center max-w-7xl mx-auto">
             <div className="border border-base-content/75 rounded grid grid-cols-1 md:grid-cols-2 w-full mx-2">
 
                 <div className="flex flex-col justify-center items-center p-8">

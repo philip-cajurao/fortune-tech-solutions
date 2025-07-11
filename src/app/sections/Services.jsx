@@ -4,11 +4,13 @@ import Image from "next/image";
 import marketingGraphics from "../assets/marketing.png"
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { SectionContext } from "../context/SectionContext";
 
 const Services = () => {
     const { darkTheme } = useContext(ThemeContext);
+    const { servicesRef } = useContext(SectionContext);
     return (
-        <div className="flex flex-col items-center justify-center mb-16">
+        <div ref={servicesRef} className="py-32 flex flex-col items-center justify-center mb-16">
             <div className="flex flex-col md:flex-row items-center space-x-2 text-center mb-8">
                 <h2 className="text-2xl font-bold">What does FTS offer?</h2>
                 <span className="text-xl text-base-content/75">Everything you need to build great products.</span>

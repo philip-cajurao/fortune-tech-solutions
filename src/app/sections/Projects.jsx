@@ -1,3 +1,5 @@
+"use client"
+
 import ie from "../assets/projects images/ie.png"
 import cos from "../assets/projects images/cos.png"
 import fht from "../assets/projects images/fht.png"
@@ -7,10 +9,13 @@ import fts from "../assets/projects images/fts.png"
 import feoaf from "../assets/projects images/feoaf.png"
 import Testimonials from "../components/Testimonials"
 import Image from "next/image"
+import { useContext } from "react"
+import { SectionContext } from "../context/SectionContext"
 
 const Projects = () => {
+    const {projectsRef} = useContext(SectionContext);
     return (
-        <div className="overflow-hidden pb-16">
+        <div ref={projectsRef} className="overflow-hidden pt-32">
             <h2 className="text-4xl font-bold text-center">Projects we&apos;ve done</h2>
             <p className="text-xl text-center mb-4">Tailored just for you</p>
 
