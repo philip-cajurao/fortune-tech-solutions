@@ -5,7 +5,6 @@ import { useState } from "react";
 // import { useEffect } from "react";
 import { motion } from "framer-motion"
 import Modal from "./Modal";
-import { sendToGHL } from "../services/ghl";
 
 const EmailForm = () => {
 
@@ -141,9 +140,15 @@ const EmailForm = () => {
         }
 
         try {
-            const res = await sendToGHL(json);
+            const response = await fetch("/api/send", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(json)
+            })
 
-            if (res) {
+            const result = await response.json();
+
+            if (result) {
 
                 setFormData({
                     from_email: { value: "", isValid: true, errorMessage: "" },
