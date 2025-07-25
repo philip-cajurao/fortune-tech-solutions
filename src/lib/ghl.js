@@ -19,6 +19,6 @@ export async function sendToGHL(jsonData, ghlId, ghlWebhookId) {
         } else {
             console.error("Axios error:", error.message)
         }
-        throw new Error("Form submission failed.");
+        return new Error("Form submission failed.");
     }
 };
