@@ -1,8 +1,6 @@
 "use client"
 
-// import emailjs from "@emailjs/browser";
 import { useState } from "react";
-// import { useEffect } from "react";
 import { motion } from "framer-motion"
 import Modal from "./Modal";
 
@@ -97,38 +95,6 @@ const EmailForm = () => {
         };
 
         setIsLoading(true)
-        // emailjs.send('service_8zzqrkd', 'template_hpkokfj', templateParams).then(
-        //     (response) => {
-
-        //         if (response) {
-        //             setFormData({
-        //                 from_email: { value: "", isValid: true, errorMessage: "" },
-        //                 from_firstName: { value: "", isValid: true, errorMessage: "" },
-        //                 from_lastName: { value: "", isValid: true, errorMessage: "" },
-        //                 from_phone: { value: "", isValid: true, errorMessage: "" },
-        //                 message: { value: "", isValid: true, errorMessage: "" },
-        //             })
-
-        //             setIsLoading(false)
-        //             setSubmissionState({ ...submissionState, state: true, success: true })
-
-        //             setTimeout(() => {
-        //                 setSubmissionState({ ...submissionState, state: false });
-        //             }, 2000);
-        //         }
-
-        //     },
-        //     // error
-        //     () => {
-
-        //         setIsLoading(false)
-        //         setSubmissionState({ ...submissionState, state: true, success: false })
-
-        //         setTimeout(() => {
-        //             setSubmissionState({ ...submissionState, state: false });
-        //         }, 2000);
-        //     },
-        // );
 
 
         const json = {
@@ -177,26 +143,6 @@ const EmailForm = () => {
         }
     }
 
-    // useEffect(() => {
-    //     emailjs.init({
-    //         publicKey: '1EyTY6eLSshat_knt',
-    //         // Do not allow headless browsers
-    //         blockHeadless: true,
-    //         blockList: {
-    //             // Block the suspended emails
-    //             list: ['foo@emailjs.com', 'bar@emailjs.com'],
-    //             // The variable contains the email address
-    //             watchVariable: 'userEmail',
-    //         },
-    //         limitRate: {
-    //             // Set the limit rate for the application
-    //             id: 'app',
-    //             // Allow 1 request per 10s
-    //             throttle: 10000,
-    //         },
-    //     });
-    // }, []);
-
 
     return (
         <form className="rounded justify-center p-8 w-full max-w-lg">
@@ -229,16 +175,6 @@ const EmailForm = () => {
                     />
                 </div>
 
-                {/* <div className="form-control">
-                    <label className="label" htmlFor="from_email">Email</label>
-                    <div className={`transition duration-0 tooltip tooltip-error tooltip-open ${formData.from_email.isValid ? "opacity-0" : "opacity-100"}`} data-tip={formData.from_email.errorMessage} />
-                    <select defaultValue="Pick a color" className="select border-base-content/75 rounded w-full max-w-lg">
-                        <option disabled={true}>Pick a color</option>
-                        <option>Crimson</option>
-                        <option>Amber</option>
-                        <option>Velvet</option>
-                    </select>
-                </div> */}
 
                 <div className="flex flex-col lg:flex-row items-center lg:space-x-4">
                     <div className="form-control w-full">
