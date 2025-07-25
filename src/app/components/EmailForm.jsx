@@ -108,38 +108,38 @@ const EmailForm = () => {
         try {
             const response = await fetch("/api/send", {
                 method: "POST",
-                headers: {"Content-Type": "application/json"},
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(json)
             })
 
-            const result = await response.json();
-
-            if (result) {
-
-                setFormData({
-                    from_email: { value: "", isValid: true, errorMessage: "" },
-                    from_firstName: { value: "", isValid: true, errorMessage: "" },
-                    from_lastName: { value: "", isValid: true, errorMessage: "" },
-                    from_phone: { value: "", isValid: true, errorMessage: "" },
-                    message: { value: "", isValid: true, errorMessage: "" },
-                })
-
-                setIsLoading(false)
-                setSubmissionState({ ...submissionState, state: true, success: true })
-
-                setTimeout(() => {
-                    setSubmissionState({ ...submissionState, state: false });
-                }, 2000)
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Submission failed.");
             }
+
+            setFormData({
+                from_email: { value: "", isValid: true, errorMessage: "" },
+                from_firstName: { value: "", isValid: true, errorMessage: "" },
+                from_lastName: { value: "", isValid: true, errorMessage: "" },
+                from_phone: { value: "", isValid: true, errorMessage: "" },
+                message: { value: "", isValid: true, errorMessage: "" },
+            })
+
+            setIsLoading(false)
+            setSubmissionState({ ...submissionState, state: true, success: true })
+
+            setTimeout(() => {
+                setSubmissionState({ ...submissionState, state: false });
+            }, 2000)
+
         } catch (error) {
-            if (error) {
-                setIsLoading(false)
-                setSubmissionState({ ...submissionState, state: true, success: false })
+            console.error(error.message)
+            setIsLoading(false)
+            setSubmissionState({ ...submissionState, state: true, success: false })
 
-                setTimeout(() => {
-                    setSubmissionState({ ...submissionState, state: false });
-                }, 2000);
-            }
+            setTimeout(() => {
+                setSubmissionState({ ...submissionState, state: false });
+            }, 2000);
         }
     }
 
