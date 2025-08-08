@@ -66,7 +66,7 @@ const NavBar = () => {
             </div>
 
             <div className={`
-                    navbar h-4 bg-base-100 z-40 relative duration-500 transition-all
+                    navbar h-4 bg-base-100 z-40 relative duration-500 transition-shadow
                     ${!darkTheme && (isPin && "shadow")}
                         `}>
 
@@ -89,10 +89,10 @@ const NavBar = () => {
 
 
                 <div className='navbar-center hidden md:flex h-full'>
-                    <button onClick={scrollToAbout} className='btn btn-ghost rounded'>About Us</button>
-                    <button onClick={scrollToServices} className='btn btn-ghost rounded'>Services</button>
-                    <button onClick={scrollToProjects} className='btn btn-ghost rounded'>Projects</button>
-                    <button onClick={scrollToContact} className='btn btn-ghost rounded'>Contact Us</button>
+                    <button onClick={scrollToAbout} className='btn btn-ghost rounded transition-none'>About Us</button>
+                    <button onClick={scrollToServices} className='btn btn-ghost rounded transition-none'>Services</button>
+                    <button onClick={scrollToProjects} className='btn btn-ghost rounded transition-none'>Projects</button>
+                    <button onClick={scrollToContact} className='btn btn-ghost rounded transition-none'>Contact Us</button>
                 </div>
 
 

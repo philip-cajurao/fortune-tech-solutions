@@ -1,7 +1,7 @@
 "use client"
 
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
 const ThemeSelector = () => {
@@ -14,6 +14,7 @@ const ThemeSelector = () => {
         const selectedTheme = event.target.checked ? 'black' : 'light';
         setTheme(selectedTheme);
     };
+
 
     return (
         <label className="swap swap-rotate">
