@@ -67,9 +67,10 @@ export const metadata = {
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en">
       <body
         className={`antialiased ${inter.className}`}
       >

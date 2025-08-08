@@ -5,22 +5,27 @@ import { ThemeContext } from '../context/ThemeContext';
 import { useEffect } from 'react';
 
 export default function ThemeProvider({ children }) {
-    const [theme, setTheme] = useState('light');
+
+
+    const [theme, setTheme] = useState("light");
     const [darkTheme, setDarkTheme] = useState(false);
 
     useEffect(() => {
-        const storedTheme = localStorage.getItem('theme') || 'light';
-        setTheme(storedTheme);
+        const savedTheme = localStorage.getItem("theme");
+        if (!savedTheme) {
+            localStorage.setItem("theme", theme);
+        } else {
+            setTheme(savedTheme);
+        }
     }, []);
 
     useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+        localStorage.setItem("theme", theme);
 
-        if (theme == "black") {
-            setDarkTheme(true);
-        } else {
+        if (theme == 'light') {
             setDarkTheme(false);
+        } else {
+            setDarkTheme(true);
         }
 
     }, [theme, setDarkTheme]);
